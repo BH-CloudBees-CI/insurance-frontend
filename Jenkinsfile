@@ -43,7 +43,6 @@ pipeline {
           }
           when {
             environment name: 'FAVORITE_COLOR', value: 'BLUE'
-            beforeInput true
             beforeAgent true
           }
           input {
@@ -53,6 +52,7 @@ pipeline {
             sh 'echo TODO - deploy to $FAVORITE_COLOR with SERVICE_CREDS: username=$SERVICE_CREDS_USR password=$SERVICE_CREDS_PSW'
           }
         }
+
       }
     }
   }
